@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 const Confirm = () => {
     const classes = useStyles();
     const secondary = true;
-    const {updateContinueState,updateBackState} = useVariable();
+    const {updateContinueState,updateBackState,updateUserValues,updatePersonalValues,state} = useVariable();
     return (
         <div>
             <AppBar position="static">
@@ -54,9 +54,10 @@ const Confirm = () => {
             <div className={classes.demo}>
                 <List>
                     <ListItem >
+                    {console.log(state.values.fName)}
                         <ListItemText
                             primary="First Name"
-                            secondary={secondary ? 'George' : null}
+                            secondary={secondary ? state.values.fName : null}
                         />
                     </ListItem>
                 </List>
@@ -64,7 +65,7 @@ const Confirm = () => {
                     <ListItem>
                         <ListItemText
                                     primary="Second Name"
-                                    secondary={secondary ? 'Joseph' : null}
+                                    secondary={secondary ? state.values.lName : null}
                         />
                     </ListItem>
                 </List>
@@ -72,7 +73,7 @@ const Confirm = () => {
                     <ListItem>
                         <ListItemText
                                     primary="Email ID"
-                                    secondary={secondary ? 'test@test.com' : null}
+                                    secondary={secondary ? state.values.email : null}
                         />
                     </ListItem>
                 </List>
@@ -80,7 +81,7 @@ const Confirm = () => {
                     <ListItem>
                         <ListItemText
                                     primary="Age"
-                                    secondary={secondary ? '22' : null}
+                                    secondary={secondary ? state.values.age : null}
                         />
                     </ListItem>
                 </List>
@@ -88,7 +89,7 @@ const Confirm = () => {
                     <ListItem>
                         <ListItemText
                                     primary="Sex"
-                                    secondary={secondary ? 'Male' : null}
+                                    secondary={secondary ? state.values.sex : null}
                         />
                     </ListItem>
                 </List>
@@ -96,7 +97,7 @@ const Confirm = () => {
                     <ListItem>
                         <ListItemText
                                     primary="University"
-                                    secondary={secondary ? 'USC' : null}
+                                    secondary={secondary ? state.values.university : null}
                         />
                     </ListItem>
                 </List>
@@ -104,7 +105,7 @@ const Confirm = () => {
                     <ListItem>
                         <ListItemText
                                     primary="Major"
-                                    secondary={secondary ? 'CS' : null}
+                                    secondary={secondary ? state.values.major : null}
                         />
                     </ListItem>
                 </List>
@@ -112,7 +113,7 @@ const Confirm = () => {
                     <ListItem>
                         <ListItemText
                                     primary="Address"
-                                    secondary={secondary ? '649 West' : null}
+                                    secondary={secondary ? state.values.address : null}
                         />
                     </ListItem>
                 </List>

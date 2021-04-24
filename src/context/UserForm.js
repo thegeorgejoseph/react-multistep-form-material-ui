@@ -45,18 +45,21 @@ const UserForm = () => {
     var [state,setState] = useState(initialState);
     
     const updateContinueState = () => {
-        setState({...state,step: state.step + 1})
+        setState(prevState => ({...prevState,step: prevState.step + 1 }))
     }
     const updateBackState = () => {
-        setState({...state,step:state.step -1})
+        setState(prevState => ({...prevState,step:prevState.step - 1}))
     }
-    const updateValues  = (details) => {
-        setState({...state,values:details})
+    const updateUserValues  = (details) => {
+       setState(prevState => ({...prevState,values:{...prevState.values,fName:details.fName,lName:details.lName,email:details.email}}))
+    }
+    const updatePersonalValues  = (details) => {
+        setState(prevState => ({...prevState,values:{...prevState.values,age:details.age,sex:details.sex,university:details.university,major:details.major,address:details.address}}))
     }
     return (
         <div>
-            <ContextVariable.Provider value={{updateContinueState,updateBackState,updateValues}} >
-                {console.log(state.step)}
+            <ContextVariable.Provider value={{updateContinueState,updateBackState,updateUserValues,updatePersonalValues,state}} >
+                {console.log(state)}
                 {returnComponent(state.step)}
             </ContextVariable.Provider>
         </div>

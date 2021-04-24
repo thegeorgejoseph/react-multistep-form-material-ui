@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
   }));
 const FormPersonalDetails = () => {
     const classes = useStyles();
-    const {updateContinueState,updateBackState} = useVariable();
+    const {updateContinueState,updateBackState,updateUserValues,updatePersonalValues,state} = useVariable();
+    var [val,setVal] = useState({age:'',sex:'',university:'',major:'',address:''})
     return (
         <div>
             <AppBar position="static">
@@ -43,13 +44,13 @@ const FormPersonalDetails = () => {
                 </Toolbar>
             </AppBar>
             <div className='inputclass' style={{width:"40%",margin:'auto',display: "flex",flexDirection:"column",justifyContent: "center",alignItems: "center"}}>
-            <TextField label="Age" color="secondary" /><br/>
-            <TextField label="Sex" color="secondary" /><br/>
-            <TextField label="University" color="secondary" /><br/>
-            <TextField label="Major" color="secondary" /><br/>
-            <TextField label="Address" color="secondary" /><br/>
+            <TextField label="Age" color="secondary" onChange={(e) => {setVal({...val,age:e.target.value})}}/><br/>
+            <TextField label="Sex" color="secondary" onChange={(e) => {setVal({...val,sex:e.target.value})}}/><br/>
+            <TextField label="University" color="secondary" onChange={(e) => {setVal({...val,university:e.target.value})}}/><br/>
+            <TextField label="Major" color="secondary" onChange={(e) => {setVal({...val,major:e.target.value})}}/><br/>
+            <TextField label="Address" color="secondary" onChange={(e) => {setVal({...val,address:e.target.value})}}/><br/>
             </div>
-            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} onClick={updateContinueState}>Continue </Button>
+            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} onClick={()=> {updatePersonalValues(val);updateContinueState();}}>Continue </Button>
             <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex",marginTop:'5px'}} onClick={updateBackState}>Back </Button>
         </div>
     )

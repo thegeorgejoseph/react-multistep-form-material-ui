@@ -29,8 +29,8 @@ const useStyles = makeStyles((theme) => ({
 
 const FormUserDetails = () => {
     const classes = useStyles();
-    var {updateContinueState,updateBackState,updateValues} = useVariable();
-    var [val,setVal] = useState({fName:'',lName:'',email:'',age:'',sex:'',university:'',major:'',address:''})
+    var {updateContinueState,updateBackState,updateUserValues,updatePersonalValues,state} = useVariable();
+    var [val,setVal] = useState({fName:'',lName:'',email:''})
     return (
         <div>
             <AppBar position="static">
@@ -47,9 +47,8 @@ const FormUserDetails = () => {
             <TextField label="First Name" color="secondary" onChange={(e) => {setVal({...val,fName:e.target.value})}}/><br/>
             <TextField label="Last Name" color="secondary" onChange={e => {setVal({...val,lName:e.target.value})}}/><br/>
             <TextField label="Email ID" color="secondary"onChange={e => {setVal({...val,email:e.target.value})}} /><br/>
-            {console.log(val)}
             </div>
-            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} onClick={() => {updateValues(val);updateContinueState();}}>Continue </Button>
+            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} onClick={() => {updateUserValues(val);updateContinueState();}}>Continue </Button>
 
         </div>
     )
