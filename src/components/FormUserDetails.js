@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 const FormUserDetails = () => {
     const classes = useStyles();
-    const {updateState} = useVariable();
+    var {updateContinueState,updateBackState} = useVariable();
     return (
         <div>
             <AppBar position="static">
@@ -47,7 +47,7 @@ const FormUserDetails = () => {
             <TextField label="Last Name" color="secondary" /><br/>
             <TextField label="Email ID" color="secondary" /><br/>
             </div>
-            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} onClick={updateState}>Continue </Button>
+            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} onClick={updateContinueState}>Continue </Button>
 
         </div>
     )

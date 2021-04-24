@@ -9,6 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import {useVariable} from '../context/UserForm'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 const Confirm = () => {
     const classes = useStyles();
     const secondary = true;
+    
     return (
         <div>
             <AppBar position="static">
