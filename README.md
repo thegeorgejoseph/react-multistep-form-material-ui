@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Concepts Learned
+
+> Learned to use material ui components like AppBar, Lists, Buttons and to style them.
+> Used Context API to pass props down to 4 different children 
+> Used custom hooks to pass the ContextProvider to children
+> Solidifed foundation of useState by learning how to use setState for multiple usecases
+> Learnt how to create a dynamic webapp that not only looks good but is also functional.
+
 ## Available Scripts
 
 In the project directory, you can run:
