@@ -4,11 +4,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Concepts Learned
 
-> Learned to use material ui components like AppBar, Lists, Buttons and to style them.
-> Used Context API to pass props down to 4 different children 
-> Used custom hooks to pass the ContextProvider to children
-> Solidifed foundation of useState by learning how to use setState for multiple usecases
-> Learnt how to create a dynamic webapp that not only looks good but is also functional.
+> Learned to use material ui components like AppBar, Lists, Buttons and to style them. \
+> Used Context API to pass props down to 4 different children \
+> Used custom hooks to pass the ContextProvider to children\
+> Solidifed foundation of useState by learning how to use setState for multiple usecases\
+> Learnt how to create a dynamic webapp that not only looks good but is also functional.\
+
+<img width="1251" alt="image" src="https://user-images.githubusercontent.com/37734939/115969932-118e1d80-a55d-11eb-9654-718665c59f6d.png">
 
 ## Available Scripts
 
