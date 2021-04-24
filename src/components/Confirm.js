@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 const Confirm = () => {
     const classes = useStyles();
     const secondary = true;
-    
+    const {updateContinueState,updateBackState} = useVariable();
     return (
         <div>
             <AppBar position="static">
@@ -117,8 +117,8 @@ const Confirm = () => {
                     </ListItem>
                 </List>
             </div>
-            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} type="submit" >Confirm </Button>
-            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex",marginTop:'5px'}}>Back </Button>
+            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} type="submit" onClick={updateContinueState}>Confirm </Button>
+            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex",marginTop:'5px'}} onClick={updateBackState}>Back </Button>
             </form>
             
         </div>

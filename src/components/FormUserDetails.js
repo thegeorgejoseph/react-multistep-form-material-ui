@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
 
 const FormUserDetails = () => {
     const classes = useStyles();
-    var {updateContinueState,updateBackState} = useVariable();
+    var {updateContinueState,updateBackState,updateValues} = useVariable();
+    var [val,setVal] = useState({fName:'',lName:'',email:'',age:'',sex:'',university:'',major:'',address:''})
     return (
         <div>
             <AppBar position="static">
@@ -43,11 +44,12 @@ const FormUserDetails = () => {
                 </Toolbar>
             </AppBar>
             <div className='inputclass' style={{width:"40%",margin:'auto',display: "flex",flexDirection:"column",justifyContent: "center",alignItems: "center"}}>
-            <TextField label="First Name" color="secondary" /><br/>
-            <TextField label="Last Name" color="secondary" /><br/>
-            <TextField label="Email ID" color="secondary" /><br/>
+            <TextField label="First Name" color="secondary" onChange={(e) => {setVal({...val,fName:e.target.value})}}/><br/>
+            <TextField label="Last Name" color="secondary" onChange={e => {setVal({...val,lName:e.target.value})}}/><br/>
+            <TextField label="Email ID" color="secondary"onChange={e => {setVal({...val,email:e.target.value})}} /><br/>
+            {console.log(val)}
             </div>
-            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} onClick={updateContinueState}>Continue </Button>
+            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} onClick={() => {updateValues(val);updateContinueState();}}>Continue </Button>
 
         </div>
     )

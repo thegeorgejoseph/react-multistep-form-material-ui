@@ -1,4 +1,4 @@
-import React,{useContext,useState,useEffect} from 'react'
+import React,{useContext,useState} from 'react'
 import FormUserDetails from '../components/FormUserDetails'
 import FormPersonalDetails from '../components/FormPersonalDetails'
 import Success from '../components/Success'
@@ -45,14 +45,17 @@ const UserForm = () => {
     var [state,setState] = useState(initialState);
     
     const updateContinueState = () => {
-        setState({...state,step: state.step +1 })
+        setState({...state,step: state.step + 1})
     }
     const updateBackState = () => {
         setState({...state,step:state.step -1})
     }
+    const updateValues  = (details) => {
+        setState({...state,values:details})
+    }
     return (
         <div>
-            <ContextVariable.Provider value={{updateContinueState,updateBackState}} >
+            <ContextVariable.Provider value={{updateContinueState,updateBackState,updateValues}} >
                 {console.log(state.step)}
                 {returnComponent(state.step)}
             </ContextVariable.Provider>
