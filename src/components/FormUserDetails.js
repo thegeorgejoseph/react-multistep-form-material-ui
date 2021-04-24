@@ -43,9 +43,9 @@ const FormUserDetails = () => {
                 </Toolbar>
             </AppBar>
             <div className='inputclass' style={{width:"40%",margin:'auto',display: "flex",flexDirection:"column",justifyContent: "center",alignItems: "center"}}>
-            <TextField className="firstname" label="First Name" color="secondary" /><br/>
-            <TextField className="secondname" label="Last Name" color="secondary" /><br/>
-            <TextField className="email" label="Email ID" color="secondary" /><br/>
+            <TextField label="First Name" color="secondary" /><br/>
+            <TextField label="Last Name" color="secondary" /><br/>
+            <TextField label="Email ID" color="secondary" /><br/>
             </div>
             <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}}>Continue </Button>
 
