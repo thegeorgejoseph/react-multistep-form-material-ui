@@ -48,6 +48,7 @@ const Confirm = () => {
                     </Typography>
                 </Toolbar>
             </AppBar>
+            <form >
             <div className={classes.demo}>
                 <List>
                     <ListItem >
@@ -114,8 +115,9 @@ const Confirm = () => {
                     </ListItem>
                 </List>
             </div>
-            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}}>Continue </Button>
+            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} type="submit" >Confirm </Button>
             <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex",marginTop:'5px'}}>Back </Button>
+            </form>
             
         </div>
     )
