@@ -1,16 +1,13 @@
-import UserForm,{ContextVariable} from './context/UserForm'
-import FormUserDetails from  './components/FormUserDetails'
-import React, {useContext} from 'react'
+import React from 'react'
+import UserForm from './context/UserForm'
 
 function App() {
-  const state = useContext(ContextVariable);
 
   return (
     <div className="App">
-       {console.log(state)}
-        <UserForm>
-            <FormUserDetails/>
-        </UserForm>
+      <UserForm>
+        
+      </UserForm>
     </div>
   );
 }

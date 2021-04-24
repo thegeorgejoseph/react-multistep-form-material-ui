@@ -7,8 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import TextField from '@material-ui/core/TextField';
-
-
+import { useVariable } from '../context/UserForm';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 const FormUserDetails = () => {
     const classes = useStyles();
+    const {updateState} = useVariable();
     return (
         <div>
             <AppBar position="static">
@@ -47,7 +47,7 @@ const FormUserDetails = () => {
             <TextField label="Last Name" color="secondary" /><br/>
             <TextField label="Email ID" color="secondary" /><br/>
             </div>
-            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}}>Continue </Button>
+            <Button variant="outlined" color="secondary" style={{margin:"auto",display:"flex"}} onClick={updateState}>Continue </Button>
 
         </div>
     )
